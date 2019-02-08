@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Estadios{% endblock %}
+
+{% block content %}
+<h1>Lista General de Estadios!</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Estadio</th>
+		<th>Actions</th>
+		<th><a href="{% url 'NFLP_app:detalleEs' %}" class="btn btn-link">Detalle de los estadios</a></th>
+		{% for estadio in objects %}
+			<tr>
+				<td>{{ estadio.estadio }}</td>
+				<td><a href="{% url 'NFLP_app:detalles_estadios' %}" class="btn btn-link">Detalle</a></td>
+				<td> </td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
