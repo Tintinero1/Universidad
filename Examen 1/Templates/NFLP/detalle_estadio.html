@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Detalle de Estadios{% endblock %}
+
+{% block content %}
+<h1>Detalle de Estadios</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Estadio</th>
+		<th>Pais</th>
+		<th>Actions</th>
+		<th> </th>
+		{% for estadio in objects %}
+			<tr>
+				<td>{{ estadio.estadio }}</td>
+				<td>USA</td>
+				<td><a href="#" class="btn btn-link">Delete</a></td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
