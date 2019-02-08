@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Detalle de Jugadores{% endblock %}
+
+{% block content %}
+<h1>Detalle de Jugadores</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Equipo</th>
+		<th>Numero</th>
+		<th>Nombre</th>
+		<th>Fuerza</th>
+		<th>Velocidad</th>
+		<th>Resistencia</th>
+		<th>Actions</th>
+		<th> </th>
+		{% for jugador in objects %}
+			<tr>
+				<td>{{ jugador.equipo }}</td>
+				<td>{{ jugador.numero }}</td>
+				<td>{{ jugador.nombre }}</td>
+				<td>{{ jugador.fuerza }}</td>
+				<td>{{ jugador.velocidad }}</td>
+				<td>{{ jugador.resistencia }}</td>
+				<td><a href="#" class="btn btn-link">Delete</a></td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
