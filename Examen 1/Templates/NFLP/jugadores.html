@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Equipos de NFLP!{% endblock %}
+
+{% block content %}
+<h1>Lista General de Jugadores</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Numero</th>
+		<th>Nombre</th>
+		<th>Actions</th>
+		<th><a href="{% url 'NFLP_app:detalleJu' %}" class="btn btn-link">Detalles Generales de Jugadores</a></th>
+		{% for jugador in objects %}
+			<tr>
+				<td>{{ jugador.numero }}</td>
+				<td>{{ jugador.nombre }}</td>
+				<td><a href="{% url 'NFLP_app:porjugador' jugador.nombre %}" class="btn btn-link">Detalle por Jugador</a></td>
+				<td> </td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
