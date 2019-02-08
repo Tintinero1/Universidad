@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Equipos{% endblock %}
+
+{% block content %}
+<h1>Lista General de Equipos!</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Equipo</th>
+		<th>Actions</th>
+		<th><a href="{% url 'NFLP_app:detalleEq' %}" class="btn btn-link">Detalles de los Equipos</a></th>
+		{% for nombre in objects %}
+			<tr>
+				<td>{{ nombre.equipo }}</td>
+				<td><a href="{% url 'NFLP_app:detalleequipo' nombre.equipo %}" class="btn btn-link">Jugadores en este Equipo</a></td>
+				<td> </td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
