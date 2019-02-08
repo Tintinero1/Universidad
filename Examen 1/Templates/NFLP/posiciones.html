@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Lista General de Posiciones{% endblock %}
+
+{% block content %}
+<h1>Lista General de Posiciones</h1>
+<br>
+	<table class= "table table-striped">
+		<th>Posicion</th>
+		<th>Actions</th>
+		<th> </th>
+		{% for nombre in objects %}
+			<tr>
+				<td>{{ nombre.posicion }}</td>
+				<td><a href="{% url 'NFLP_app:listaJP' nombre.posicion %}" class="btn btn-link">Jugadores con esta posicion</a></td>
+			</tr>
+		{% endfor %}
+		
+	</table>
+
+{% endblock %}
